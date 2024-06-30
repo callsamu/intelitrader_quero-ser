@@ -92,7 +92,7 @@ main() {
 
 	auto const min_diff = shortest_distance(A, B);
 
-	std::cout << "A Menor Distância é: " << min_diff << '\n';
+	std::cout << "SHORTEST DISTANCE: " << min_diff << '\n';
     
     return 0;
 }

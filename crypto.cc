@@ -15,7 +15,7 @@ const std::string_view MESSAGE {R"(
 )"};
 
 constexpr bool 
-is_binary(char c) {
+is_binary(char const c) {
 	return c == '0' || c == '1';
 }
 
@@ -26,10 +26,10 @@ parse(std::string_view message) {
 	auto is_in_number = false;
 	std::byte b{0};
 
-	for (auto c : message) {
+	for (auto const c : message) {
 		if (is_binary(c)) {
 			is_in_number = true;
-			const auto digit = std::byte(c == '0' ? 0 : 1);
+			auto const digit = std::byte(c == '0' ? 0 : 1);
 			b = (b << 1) | digit;
 		} else {
 			if (is_in_number) {
@@ -53,13 +53,12 @@ decrypt(std::byte b) {
 	return std::to_integer<char>(b);
 }
 
-int main() {
-	const auto bytes = parse(MESSAGE);
+int 
+main() {
+	auto const bytes = parse(MESSAGE);
 
-	for (auto b : bytes) {
+	for (auto const b : bytes) {
 		std::cout << decrypt(b);
 	}
 	std::cout << '\n';
-
-	return 0;
 }

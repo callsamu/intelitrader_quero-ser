@@ -16,9 +16,9 @@ insertion_sort(std::vector<int64_t>& v) {
 	auto const size = v.size();
 	if (size == 1) return;
 
-	for (auto i = 1; i < size; i++) {
+	for (size_t i = 1; i < size; i++) {
 		auto const key = v.at(i);
-		auto j = i - 1;
+		int64_t j = i - 1;
 
 		while ((j >= 0) && (v.at(j) > key)) {
 			v.at(j + 1) = v.at(j);

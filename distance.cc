@@ -62,8 +62,8 @@ void print_vector(std::string_view name, std::vector<int64_t> v) {
 }
 
 int main() {
-  std::vector<int64_t> A{12, 25, 17, 5, 1};
-  std::vector<int64_t> B{-5, 30, 10};
+  std::vector<int64_t> A{12, 25, 17,  5,   1, 46, 35, 51, 40, 59, 11};
+  std::vector<int64_t> B{-5, 30, 10, 79, -12, 43, 55, 63, 20, 79};
 
   print_vector("A", A);
   print_vector("B", B);
